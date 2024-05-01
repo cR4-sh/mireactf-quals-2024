@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit</title>
+    <link rel="stylesheet" type="text/css" href="/static/hello.css">
+    <style>
+        body {
+            font-family: 'Raleway', sans-serif;
+            background-color: #040C1F;
+            background-image: none;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; 
+        }
+        #remainFlags {
+            margin-top: 10px;
+            text-align: center;
+        }
+        #submitHeader {
+            text-align: center;
+        }
+        #formContainer {
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            margin-top: 20px;
+        }
+        #submitForm {
+            margin-right: 20px;
+        }
+        img {
+            width: 30%; 
+        }
+    </style>
+</head>
+<body>
+    <div id="remainFlags">
+        {% if remain %}
+            Remain submit {{ remain }} flags
+        {% endif %}
+        {% if flag %}
+            {{ flag }}
+        {% endif %}
+    </div>
+    <h2 id="submitHeader">Submit flag</h2>
+    <div id="formContainer">
+        <form id="submitForm">
+            <input type="text" id="inputString" placeholder="Enter flag">
+            <button type="submit">Submit</button>
+        </form>
+        <img src="/static/give.png" alt="give image">
+    </div>
+
+        <div id="responseMessage"></div>
+    </div>
+    <script>
+        document.getElementById('submitForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var inputString = document.getElementById('inputString').value;
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '/submit', true);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = function() {
+                document.getElementById('responseMessage').innerText = JSON.parse(xhr.responseText)['message']
+            };
+            xhr.send(JSON.stringify({ flag: inputString }));
+        });
+    </script>
+</body>
+</html>
