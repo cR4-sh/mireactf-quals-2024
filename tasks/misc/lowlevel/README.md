@@ -8,7 +8,7 @@
 LowLevel.zip
 
 ## Writeup
-look into solution.py
+Check `solution.py`
 
 ## Flag
-`mireactf{th4t's_r3dst0n3_m4dn3ss}`
+`mireactf{th4t's_r3d5t0n3_m4dn3s5}`
