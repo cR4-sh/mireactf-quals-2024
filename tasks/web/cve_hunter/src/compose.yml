@@ -1,0 +1,8 @@
+version: '3.9'
+
+services:
+  cvehunt:
+    container_name: cvehunt
+    build: .
+    ports:
+      - 9999:8000

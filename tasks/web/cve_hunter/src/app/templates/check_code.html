@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Проверка кода{% endblock %}
+
+{% block content %}
+<section class="check-code-section py-5 bg-light">
+  <div class="container">
+    <h2 class="h3 mb-4">Введите код для доступа к эксплойту</h2>
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+      {{ error }}
+    </div>
+    {% endif %}
+    <form action="/exploit" method="POST" class="form-inline">
+      <input type="hidden" name="cve_id" value="{{ cve_id }}">
+      <div class="form-group mx-sm-3 mb-2">
+        <label for="inputCode" class="sr-only">Код</label>
+        <input type="text" class="form-control" id="inputCode" name="code" placeholder="Код доступа">
+      </div>
+      <button type="submit" class="btn btn-primary mb-2">Подтвердить</button>
+    </form>
+  </div>
+</section>
+{% endblock %}

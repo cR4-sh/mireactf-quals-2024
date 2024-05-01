@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sign in</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+</head>
+  <body>
+    <form action="" method="POST">
+      <input checked="" id="signin" name="action" type="radio" value="signin">
+      <label for="signin">Sign in</label>
+
+      <input id="signup" name="action" type="radio" value="signup">
+      <label for="signup">Sign up</label>
+
+      <input id="reset" name="action" type="radio" value="reset">
+      <label for="reset">Reset</label>
+
+      <div id="wrapper">
+        <div id="arrow"></div>
+        <input id="email" name="login" placeholder="Username" type="text">
+        <input id="pass" name="password" placeholder="Password" type="password">
+        <input id="repass" name="repass" placeholder="Password repeat" type="password">
+      </div>
+      <button type="submit">
+        <span>
+          Reset password
+          <br>
+          Sign in
+          <br>
+          Sign up
+        </span>
+      </button>
+      {{info}}
+    </form>
+    <div id="hint">Copyright...</div>
+  </body>
+</html>

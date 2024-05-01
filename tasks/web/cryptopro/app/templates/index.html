@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beautiful Page</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom CSS -->
+  <style>
+    /* Custom styles */
+    body {
+      background-color: #f8f9fa;
+    }
+    .navbar {
+      background-color: #6a0dad; /* Фиолетовый цвет */
+    }
+    .navbar-brand {
+      color: #fff; /* Белый цвет для логотипа */
+    }
+    .logout {
+      color: #fff; /* Белый цвет для logout */
+    }
+    .jumbotron {
+      background: url("{{ url_for('static', filename='img/background.png') }}") center center; /* Большая картинка по середине */
+      background-size: cover;
+      color: #fff;
+      text-align: center;
+      padding: 100px 0;
+    }
+    .btn-primary {
+      background-color: #6a0dad; /* Фиолетовый цвет кнопки */
+      border-color: #6a0dad;
+    }
+    .lead{
+      margin-bottom: 50px;
+    }
+    .count{
+      margin-top: 7px;
+    }
+    button {
+      margin:10px;
+    }
+    .coin{
+      position:absolute;
+      width:20px;
+      height:20px;
+      border-radius:50%;
+      background-color:yellow;
+      border:1px dotted #333;
+      -webkit-animation:1s animateOpacity;
+    }
+    .cart {
+      float:right;
+      background: url("{{ url_for('static', filename='img/wallet.png') }}") center center;
+      background-size: cover;
+      width: 70px;
+      height: 62px; 
+    }
+    @-webkit-keyframes animateOpacity {
+      from {opacity: 0;}
+      5% {opacity: 0.6;}
+      50% {opacity: 1;}
+      95% {opacity: 0.6;}
+      to {opacity: 0;}
+    }
+  </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+      $(document).ready(function(){
+          $('#increment_btn').click(function(){
+              $.post('/increment', function(data){
+                  $('#count_display').text(data.count);
+              });
+          });
+
+          $('#save_btn').click(function(){
+              window.location.href = '/save';
+          });
+
+          $('#load_btn').click(function(){
+              $('#upload_form').submit();
+          });
+          $cart = $(".cart");
+          $("#increment_btn").on("click", function(){
+              $btn = $(this);
+              var $coin = $('<div class="coin">')
+                  .insertAfter($btn)
+                  .css({
+                      "left": $btn .offset().left,
+                      "top": $btn .offset().top
+                  })
+                  .animate({
+                      "top": $cart.offset().top,
+                      "left": $cart.offset().left
+                  }, 1000, function() {
+                      $coin.remove();
+                  });
+          });
+      });
+  </script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <a class="navbar-brand" href="/portal">CryptoPro</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <h1 class="count text-white" id="count"><span id="count_display">{{ count }}</span></h1>
+        </li>
+        <li class="nav-item active">
+          <div class="cart"></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="jumbotron">
+      <h1 class="display-4 text-dark">MireaCoin</h1>
+      <p class="lead text-dark">You can mine coins here</p>
+      <hr class="my-4">
+      <button class="btn btn-primary btn-lg" id="increment_btn">Get coin</button>
+
+      <div>
+        <div>
+          <h3 class="text-dark" for="fileInput">Save wallet file</h3>
+          <button id="save_btn">Save</button>
+        </div>
+        <div>
+        <form id="upload_form" action="/load" method="post" enctype="multipart/form-data" style="margin-top: 20px;">
+          <div class="form-group">
+              <h3 class="text-dark" for="fileInput">Load wallet file</h3>
+              <input type="file" name="file" style="margin-right: -90px; color: black;">
+          </div>
+          <button type="button" id="load_btn">Load</button>
+        </form>
+        </div>
+      </div>
+    <h2 class="text-danger">{{error}}</h2>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

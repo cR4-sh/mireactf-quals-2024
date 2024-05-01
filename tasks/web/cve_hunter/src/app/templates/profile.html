@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Профиль пользователя{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center text-white">
+  <div class="hero-background" style="background-image: url('{{ url_for('static', filename='images/profile_background.webp') }}');">
+    <div class="overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content py-5">
+      <h1 class="display-4">Добро пожаловать в личный кабинет, {{username}}</h1>
+    </div>
+  </div>
+</section>
+
+<section class="profile-section py-5 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 mb-4">
+        <div class="profile-box p-4 bg-white shadow-sm">
+          <h3 class="h4 mb-3">Личные данные</h3>
+          <p><strong>Имя пользователя:</strong> {{ username }}</p>
+          <p><strong>Электронная почта:</strong> {{ email }}</p>
+        </div>
+      </div>
+
+       {% if username=='admin' %}
+      <div class="col-md-6 mb-4">
+        <div class="secure-access-box p-4 bg-white shadow-sm">
+          <h3 class="h4 mb-3">Доступ к секретному коду</h3>
+          <p>Для получения эксклюзивного доступа к секретному коду базы данных, пожалуйста, введите ваш уникальный 2FA пароль.</p>
+          {% if error %}
+          <div class="alert alert-danger" role="alert">{{ error }}</div>
+          {% endif %}
+          <form action="/verify_2fa" method="POST">
+            <div class="form-group">
+              <label for="secretPassword">2FA пароль:</label>
+              <input type="password" class="form-control" id="secretPassword" name="secretPassword" placeholder="Введите 2FA пароль" required>
+            </div>
+            <button type="submit" class="btn btn-success mt-3">Получить код</button>
+          </form>
+        </div>
+      </div>
+       {% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -1,0 +1,142 @@
+{% extends "base.html" %}
+
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<section class="login-section d-flex align-items-center py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="login-box bg-light p-5">
+          <h2 class="h3 text-center mb-4">Вход</h2>
+          <form method="post" action="/login">
+            <div class="form-group">
+              <label for="username">Логин</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="form-group password-group">
+              <label for="password">Пароль</label>
+              <div class="input-group">
+                <input type="password" class="form-control" id="password" name="password" required>
+                <div class="input-group-append">
+                  <span class="input-group-text password-toggle" onclick="togglePasswordVisibility()">
+                    <i class="fa fa-eye"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            {% if error %}
+            <div class="text-danger mb-3">{{ error }}</div>
+            {% endif %}
+            <p class="text-primary font-weight-bold text-center">Для доступа к тестовой учетной записи используйте guest:guest</p>
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Войти</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+var isVisible = false;
+
+function togglePasswordVisibility() {
+  isVisible = !isVisible;
+  var passwordFields = document.querySelectorAll('.password-group .form-control');
+  passwordFields.forEach(function(passwordField) {
+    if (isVisible) {
+      passwordField.type = "text";
+    } else {
+      passwordField.type = "password";
+    }
+  });
+  var toggleIcons = document.querySelectorAll('.password-group .password-toggle i');
+  toggleIcons.forEach(function(icon) {
+    if (isVisible) {
+      icon.classList.replace("fa-eye", "fa-eye-slash");
+    } else {
+      icon.classList.replace("fa-eye-slash", "fa-eye");
+    }
+  });
+}
+
+function validatePasswords() {
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirm-password').value;
+  var passwordMismatch = document.getElementById('passwordMismatch');
+
+  if (password !== confirmPassword) {
+    passwordMismatch.style.display = 'block';
+    return false;
+  } else {
+    passwordMismatch.style.display = 'none';
+    return true;
+  }
+}
+</script>
+
+<style>
+.login-section {
+  min-height: 100vh;
+  background-image: url('{{ url_for('static', filename='images/main_background.webp') }}');
+  background-size: cover;
+  background-position: center;
+  padding-top: 20vh;
+}
+
+.login-box {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+}
+
+.password-group .input-group {
+  position: relative;
+}
+
+.password-group .form-control {
+  padding-right: 42px; /* Make room for the eye icon */
+}
+
+.password-group .input-group-append {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  z-index: 5;
+}
+
+.password-group .input-group-text {
+  background-color: transparent;
+  border: none;
+  color: #343a40; /* Set color of eye icon */
+}
+
+.password-toggle {
+  cursor: pointer;
+}
+
+#passwordMismatch {
+  margin-top: -10px; /* Поднять текст вверх относительно своего нормального положения */
+  margin-bottom: 10px; /* Добавить немного места над кнопкой */
+  text-align: left; /* Выровнять текст по центру */
+}
+
+.form-group label {
+  font-weight: bold;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004085;
+}
+</style>
+
+{% endblock %}

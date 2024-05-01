@@ -1,0 +1,9 @@
+version: "3.9"
+services:
+  app:
+    build: ./app
+    ports:
+      - "8000:5000"
+    environment:
+      - FLAG=mireactf{fake_flag}
+      - PYTHONUNBUFFERED=1

@@ -1,0 +1,25 @@
+/* Стили для футера */
+.footer {
+  background-color: #333;
+  color: #fff;
+}
+
+.footer p {
+  margin-bottom: 0.5rem; /* Небольшой отступ между строками */
+}
+
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer .col-md-4 {
+    text-align: left;
+    margin-top: 1rem;
+  }
+}
