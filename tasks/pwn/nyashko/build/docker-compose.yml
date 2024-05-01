@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  nyashko_pwn:
+    # image: registry.mireactf.ru:5000/nyashko:latest
+    build: .
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    environment:
+      - FLAG=mireactf{y05_4r3_h4ck3r_n0t_a_nyask0}
+    ports:
+      - 9000:9000

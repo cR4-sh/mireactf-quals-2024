@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  ege_pwn:
+    # image: registry.mireactf.ru:5000/ege:latest
+    build: .
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    environment:
+      - FLAG=mireactf{qweqweqwe}
+    ports:
+      - 9001:9001

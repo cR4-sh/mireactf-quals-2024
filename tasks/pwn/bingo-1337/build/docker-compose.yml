@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  bingo_pwn:
+    # image: registry.mireactf.ru:5000/bingo-1337:latest
+    build: .
+    environment:
+      - FLAG=mireactf{qweqweqwe}
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    ports:
+      - 9002:9002

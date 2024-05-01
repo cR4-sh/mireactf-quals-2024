@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  hello_pwn:
+    image: registry.mireactf.ru:5000/hello-name:latest
+    platform: linux/amd64
+    cpus: 1
+    mem_limit: 256m
+    ports:
+      - 9003:9003
