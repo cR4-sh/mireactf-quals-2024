@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  pathtolibrary-app:
+    container_name: pathtolibrary-app
+    ports:
+      - 9090:5000
+    restart: always
+    build: .
