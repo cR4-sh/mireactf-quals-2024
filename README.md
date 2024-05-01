@@ -44,7 +44,7 @@
 | [hello-name](tasks/pwn/hello-name) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [ege](tasks/pwn/ege) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [bingo-1337](tasks/pwn/bingo-1337) | pwn | [@robert_sama](https://t.me/robert_sama) |
-| [nyaaashko](tasks/pwn/nyaaashko) | pwn | [@robert_sama](https://t.me/robert_sama) |
+| [nyaaashko](tasks/pwn/nyashko) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [minirsa](tasks/crypto/minirsa) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
 | [larger-rsa](tasks/crypto/larger-rsa) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
 | [strongest-xor](tasks/crypto/strongest-xor) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
