@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Калькулятор</title>
+</head>
+<body>
+    <h1>БББ0-01-7 Жуков Михаил</h1>
+    <form method="post">
+        <input type="number" name="num1" placeholder="Первое число" required step="any"><br><br>
+        <select name="operator">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select><br><br>
+        <input type="number" name="num2" placeholder="Второе число" required step="any"><br><br>
+        <button type="submit">Вычислить</button>
+    </form>
+        Результат: {{ result1 }}
+</body>
+</html>
