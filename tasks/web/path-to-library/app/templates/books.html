@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of Books</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('img/background.jpg');  
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .book-list-container {
+            max-width: 800px;  
+            margin: 0 auto; 
+            padding: 20px; 
+            background-color: #fff;  
+            border-radius: 8px;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;  
+            background-color: #007bff;  
+            padding: 20px;  
+            border-radius: 8px;  
+        }
+    </style>
+</head>
+<body>
+    <h1 class="margin auto">The 30 best books in the world</h1>
+    <div class="book-list-container">
+        <ul>
+            {% for book in books %}
+            <li>{{ book[0] }} by {{ book[1] }} ({{ book[2] }})</li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+  crazypicles:
+    container_name: crazypicles
+    ports:
+      - 7777:80
+    build: .
+    environment:
+      - FLAG=wadwadwadwadwadwadawdwada

@@ -1,0 +1,9 @@
+version: '3.9'
+
+services:
+  cybercalc-app:
+    container_name: cybercalc-app
+    ports:
+      - 12346:12346
+    restart: always
+    build: .

@@ -1,0 +1,18 @@
+{{ template "head" . }}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">{{ .map }} Фишечки</h1>
+    {{ range .fishki }}
+    <div class="smoke">
+        <div style="width: 200;">
+            <h2>{{ .Decript }}</h2>
+        </div>
+        <video id="myvideo" width="960" height="540" loop autoplay muted inline poster="resources?filename=please.jpg">
+            <source src="resources?filename={{ .PATH }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    {{ end }}
+</div>
+
+{{ template "footer" . }}

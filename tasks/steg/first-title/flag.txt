@@ -1,0 +1,54 @@
+mireactf{first_letter_like_first_anime_is_forever}
+
+m- Makima (Chainsaw Man)
+i - Ino Yamanaka (Naruto)
+r - Revy (Black Lagoon)
+e - Endou Atsuko (Eleven Game)
+a - Akira Kogami (Lucky Star)
+c - Chikage Kuroba (Magic Kaito)
+t - Taiga Aisaka (Toradora!)
+f - Frenda Seivelun (A Certain Scientific Railgun)
+
+{ } - качки из необъятного океана
+
+f - Furano (Children of the Whales)
+i - Inori Hiiragi (Lucky Star)  
+r - Rize Kamishiro (Tokyo Ghoul)
+s - Shuvi Dola (No Game No Life)
+t - Tsunade (Naruto)
+
+l - Lucy Heartfilia (Fairy Tail)
+e - Eucliwood Hellscythe (Is This a Zombie?)
+t - Talho Yuki (Eureka Seven)
+t - Taylor Bartlett (Violet Evergarden)
+e - Ellis Fahrengart (Blade Dance of the Elementalers)
+r - Rika Noyamano (Air Gear)
+
+l - Lieselotte Sherlock (Trinity Seven)
+i - Isami Omiya (KINMOZA!)
+k - Konata Izumi (Lucky Star)
+e - Eto (Tokyo Ghoul)
+
+f - Frederica Sawyer (Пираты «Чёрной лагуны»)
+i - Ichika Abarai (Bleach)
+r - Rukia Kuchiki (Bleach)
+s - Sayaka Maizono (Школа надежды и безнадёжные школьники)
+t - Tooru Honda (Fruits Basket)
+
+a - Aka Onda (REC)
+n - Nezuko Kamado (Demon Slayer: Kimetsu no Yaiba)
+i - Inori Yuzuriha (Guilty Crown)
+m - Mirajane Strauss (Fairy Tail)
+e - Enora Taft (Рассвет Марса)
+
+i - Ikaros (Heaven's Lost Property)
+s - Sakura Chiyo (Monthly Girls' Nozaki-kun)
+
+f - Fate Testarossa (Magical Girl Lyrical Nanoha)
+o - Otonashi Haruna (Инадзума 11)
+r - Reiko Mikami (Another)
+e - Erica Brown (Violet Evergarden)
+v - Victoria Seras (Hellsing)
+e - Engi Threepiece (Мерри, пожирательница снов) 
+r - Reika Nishimura (Красавица-воин Сейлор Мун)
+

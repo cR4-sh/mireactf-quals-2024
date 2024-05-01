@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Path-to-library</title>
+    <link rel="icon" href="img/icon.png" type="image/x-icon">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            background-image: url('img/background.jpg'); 
+            background-size: cover; 
+            background-position: center; 
+            position: relative;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            background-image: url('img/minecraftbooks.jpg');
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: white;
+            font: 600 60px/60px Arial;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #007bff;
+            font: 600 50px/50px Arial;
+            text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid rgb(82, 31, 2);
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .search-results {
+            margin-top: 20px;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+        }
+
+        .book {
+            margin-bottom: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .book h3 {
+            margin-top: 0;
+        }
+
+        .book p {
+            margin: 5px 0;
+        }
+
+        .book-list-container {
+            max-width: 800px;  
+            margin: 0 auto;  
+            padding: 20px;  
+            background-color: #fff;  
+            border-radius: 8px;  
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  
+        }
+
+        .books-button {
+            position: absolute;  
+            top: 10px;  
+            right: 20px;  
+        }
+
+        .books-button a {
+            text-decoration: none;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+        }
+
+        .books-button a:hover {
+            background-color: #0056b3;
+        }
+
+        .error-message {
+            text-align: center;
+            font: 600 50px/50px Arial;
+            color: #ffffff; 
+            padding: 10px; 
+            margin-top: 10px; 
+            border-radius: 5px; 
+        }
+        
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>Сheck if your book is in the top</h1>
+    <form action="/" method="POST">
+        <input type="text" name="query" placeholder="Search for books...">
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="books-button">
+        <a href="/books">See TOP 30</a>
+    </div>
+
+    {% if message %}
+    <div class="error-message">
+        {{ message }}
+    </div>
+    {% endif %}
+    
+    {% if books %}
+    <h2>Search Results</h2>
+    <ul>
+        {% for book in books %}
+        <li class="book-list-container">{{ book[0] }} by {{ book[1] }} ({{ book[2] }})</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>

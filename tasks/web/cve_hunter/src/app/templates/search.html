@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Поиск CVE{% endblock %}
+
+{% block content %}
+<section class="search-section py-5 bg-light">
+  <div class="container">
+    <h2 class="h3 mb-4">База данных CVE</h2>
+    <form action="/search" method="GET" class="search-form mb-4">
+      <div class="input-group">
+        <input type="text" name="cve_id" class="form-control" placeholder="Введите номер CVE (например, CVE-2021-1234)" value="{{ request.args.get('cve_id', '') }}">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary" type="submit">Поиск</button>
+        </div>
+      </div>
+    </form>
+    <div class="list-group">
+      {% for cve in cves %}
+      <a href="/check_code?cve_id={{ cve.cve_id }}" class="list-group-item list-group-item-action d-flex align-items-center">
+        <img src="{{ url_for('static', filename='images/exploit-icon.svg') }}" alt="CVE Icon" class="rounded-circle" style="width: 40px; height: 40px; margin-right: 15px;">
+        <div>
+          <div><strong>{{ cve.cve_id }}</strong> - {{ cve.description }}</div>
+        </div>
+      </a>
+      {% else %}
+      <p class="text-muted">CVE не найдены.</p>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endblock %}

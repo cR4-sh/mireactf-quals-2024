@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hello</title>
+  <link rel="stylesheet" type="text/css" href="/static/hello.css">
+</head>
+<body>
+  <form id="authForm">
+    <input id="signup" name="action" type="radio" value="signup">
+    <label for="signup">Sign up</label>
+
+    <input checked="" id="signin" name="action" type="radio" value="signin">
+    <label for="signin">Sign in</label>
+
+
+    <div id="wrapper">
+      <div id="arrow"></div>
+      <input id="username" name="username" placeholder="Username" type="text">
+      <input id="pass" name="password" placeholder="Password" type="password">
+    </div>
+    <button type="submit">
+      <span>
+        Sign up         
+        <br>
+        Sign in
+      </span>
+    </button>
+  </form>
+  <span id="feed">{{message}}</span>
+  <div id="hint">Copyright...</div>
+  </body>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+      event.preventDefault();
+  
+      var action = document.querySelector('input[name="action"]:checked').value; 
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('pass').value;
+  
+      if (action === 'signin') {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/login', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+          if (xhr.status === 200) {
+            window.location.href = '/info'; 
+          } else {
+            document.getElementById('feed').innerText = JSON.parse(xhr.responseText)['message'];
+          }
+        };
+        xhr.send(JSON.stringify({ username: username, password: password }));
+      } else if (action === 'signup') {
+        var xhr = new XMLHttpRequest();
+        xhr.open('POST', '/api/register', true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.onload = function() {
+            document.getElementById('feed').innerText = JSON.parse(xhr.responseText)['message'];
+        };
+        xhr.send(JSON.stringify({ username: username, password: password }));
+      }
+    });
+  </script>
+</html>

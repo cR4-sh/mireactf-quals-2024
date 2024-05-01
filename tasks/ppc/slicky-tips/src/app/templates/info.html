@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Info</title>
+  <style>
+    @import url(http://fonts.googleapis.com/css?family=Raleway:700,800);
+    body {
+      font-family: 'Raleway', sans-serif;
+      background-color: #040C1F;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #userInfo {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #53325b;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; 
+    }
+  </style>
+</head>
+<body>
+  <div id="userInfo">
+    <h2>USER INFORMATION</h2>
+    <p id="username"></p>
+    <p id="userTips"></p>
+  </div>
+  <img src="/static/a.png" alt="Prikol" style="max-width: 100%; height: auto;">
+</body>
+
+<script>
+  fetch('/api/user')
+    .then(function(response) {
+      if (response.ok) {
+        return response.json();
+      } else {
+        throw new Error('Failed to retrieve user information');
+      }
+    })
+    .then(function(data) {
+      document.getElementById('username').innerText = 'USERNAME: ' + data.username;
+      var tipsArray = data.tips.split('\n'); 
+      var tipsList = '<ul>'; 
+      tipsArray.forEach(function(tip) {
+        tipsList += '<li>' + tip + '</li>'; 
+      });
+      tipsList += '</ul>'; 
+      document.getElementById('userTips').innerHTML = 'TIPS: ' + tipsList; 
+    })
+    .catch(function(error) {
+      console.error('Error:', error);
+      document.location.href='/login';
+    });
+</script>
+</html>

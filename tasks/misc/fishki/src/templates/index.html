@@ -1,0 +1,95 @@
+{{ define "head" }}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CS 2 Стратегии</title>
+    <link rel="icon" href="/resources?filename=icon.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        @font-face {
+            font-family: 'TT';
+            src: url('/resources?filename=TTTsarsC-Black.woff') format('woff');
+        }
+        .bg-csgo {
+            background-image: url("https://i.pinimg.com/originals/ff/c3/8d/ffc38d9bce22d7a9eaa07b890e3af1a2.jpg"); 
+            background-size: cover;
+            background-position: center center;
+            min-height: 100vh; /* Высота на весь экран */
+        }
+        .navbar, .footer {
+            width: 100%;
+            position: relative;
+        }
+        body {
+            background-image: url("https://i.pinimg.com/originals/ff/c3/8d/ffc38d9bce22d7a9eaa07b890e3af1a2.jpg");
+            background-color: #ababab;
+        }
+        .navbar {
+            top: 0;
+        }
+        .main-content {
+            padding-top: 56px; /* Высота navbar */
+            padding-bottom: 56px; /* Высота footer */
+        }
+        .footer {
+            display: flex;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            padding: 20px 0;
+            justify-content: center; /* Добавьте этот стиль, чтобы центрировать содержимое по горизонтали */
+        }
+        .smoke {
+            padding: 20px;
+            text-align: center;
+        }
+        .smoke img {
+            width: 70%; /* Увеличенный размер */
+            height: auto;
+            border-radius: 5px;
+        }
+        h1{
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            color: #fff;
+        }
+        h2{
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/">CS 2 Стратегии</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/">Главная <span class="sr-only">(current)</span></a>
+                <a class="nav-item nav-link" href="/Mirage">Mirage</a>
+                <a class="nav-item nav-link" href="/Inferno">Inferno</a>
+                <a class="nav-item nav-link" href="/Overpass">Overpass</a>
+                <a class="nav-item nav-link" href="/Ancient">Ancient</a>
+                <a class="nav-item nav-link" href="/Vertigo">Vertigo</a>
+            </div>
+        </div>
+    </nav>
+{{end}}
+    
+{{ define "footer" }}
+    <footer class="footer py-3 text-white">
+        <div class="container text-center">
+            <span>© 2024 CS 2 Стратегии. Все права защищены. Powered by fluzen</span>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+{{end}}
