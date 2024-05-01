@@ -1,0 +1,31 @@
+name: "Colorfee"
+author: "temlakoz"
+category: misc
+description: |
+ Представь, твой бро - аристократ, живущий на широкую ногу, вдруг оказался в финансовой яме. Такой поворот, да? 
+ Но даже в такие моменты, стиль – это святое, и он не может отказать себе в удовольствии насладиться лучшим кофе. 
+ Твоя миссия – выудить промокод на самый элитный кофе из бота, чтобы твой друг не утратил свой блеск даже в беде
+
+ Автор: **ds @temlakoz**
+type: dynamic
+
+extra:
+    initial: 500
+    decay: 15
+    minimum: 50
+
+image: null
+protocol: null
+host: null
+
+connection_info: t.me/dsajkgdkjfgsldfjgsier_bot
+
+flags:
+    - mireactf{blue_c0ff3e_only_f0r_blu3_bl00d}
+
+hints: null
+requirements: null
+
+state: hidden
+
+version: "0.1"
