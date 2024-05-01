@@ -1,0 +1,33 @@
+name: "optography"
+author: "S4ar"
+category: forensic
+description: | 
+  Что могут сказать глаза мертвеца для следователя?...
+  
+  Автор: **@XxX_S4ar_XxX**
+type: dynamic
+extra:
+    initial: 500
+    decay: 15
+    minimum: 50
+
+image: null
+
+protocol: null
+
+host: null
+
+connection_info: https://drive.google.com/file/d/1JEZKET0KQWJ7UPdMBMJ3tD2hhMdJV8xA/view?usp=sharing
+
+flags:
+    - mireactf{dump_scr33n_fr0m_m3m0ry_1s_base?}
+
+files: null
+
+hints: null
+
+requirements: null
+
+state: hidden
+
+version: "0.1"

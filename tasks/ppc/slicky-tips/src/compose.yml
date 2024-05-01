@@ -1,0 +1,24 @@
+version: '3.9'
+
+services:
+  # slicky-db:
+  #   container_name: slicky-db
+  #   build: ./db
+  #   restart: always
+  #   environment:
+  #     - POSTGRES_USER=root
+  #     - POSTGRES_PASSWORD=root
+  # slicky-app:
+  #   container_name: slicky-app
+  #   build: ./app
+  #   restart: always
+  #   ports:
+  #     - 7777:5000
+  #   environment:
+  #     - FLAG=mireactf{y0u_4lm05t_c4n_t0_64m3_4d}
+  slicky-app:
+    container_name: slicky-app
+    ports:
+      - 7777:5000
+    restart: always
+    build: .
