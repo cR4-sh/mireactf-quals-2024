@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    # mongo:
+    #     image: mongo
+    #     container_name: mongodb
+    #     volumes:
+    #     - ./mongodb_data:/data/db 
+    # web:
+    #     build: ./web/
+    #     volumes:
+    #         - ./web/resources:/usr/src/app/resources
+    #         - ./web/templates:/usr/src/app/templates
+    #         - ./web/secret-data:/usr/src/app/secret-data
+    #     ports:
+    #     - "8000:8000"
+    web:
+        build: .
+        ports:
+            - "8000:8000"
