@@ -20,7 +20,7 @@
 | [calculator](tasks/web/calculator) | web | [@ezzh](https://t.me/NikitaBazilews) |
 | [crazypickles](tasks/web/crazypickles) | web | [@S4ar](https://t.me/XxX_S4ar_XxX) |
 | [cryptopro](tasks/web/cryptopro) | web | [@cotsom](https://t.me/cotsom) |
-| [cve-hunter](tasks/web/cve-hunter) | web | [@temlakoz](https://t.me/Nonsssse) |
+| [cve-hunter](tasks/web/cve_hunter) | web | [@temlakoz](https://t.me/Nonsssse) |
 | [path-to-library](tasks/web/path-to-library) | web | [@papuass](https://t.me/Chillov3k) |
 | [cr1ng3-checker](tasks/rev/cr1ng3-checker) | rev | [@robert_sama](https://t.me/robert_sama) |
 | [welcome](tasks/rev/welcome) | rev | [@avoidcode](https://t.me/avoidcode) |
