@@ -19,7 +19,7 @@ We're interested in activity having intent-filter of category `android.intent.ca
     ...
 ```
 
-In the obfescated code of `onCreate` method might be found a call to viewmodel object setup methods.
+In the obfuscated code of `onCreate` method might be found a call to viewmodel object setup methods.
 Immediately pops up a call to decryption method with `data` and `key` (thanks Kotlin for revealing variable names).
 As `data` paramter passed a hardcoded base64-string `Sn18dXMhCrmaseKT3Ub2sU9FY32HEsTwvFZPeZ9XsSY3a3/Nk3FHHFlHVzRcUV7n+iBnuqZkVCYNvbof1zDyeg==`.
 The second parameter is the key. Following function calls we can understand that key is entered value to the calculator input field.
