@@ -1,0 +1,154 @@
+/* Базовые стили */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Стили для геройской секции */
+.hero-section {
+  position: relative;
+  color: #fff;
+}
+
+.hero-background {
+  background-size: cover; /* Убедимся, что изображение растягивается на весь блок */
+  background-position: center; /* Центрируем изображение */
+  height: 100vh; /* Установим высоту секции, чтобы она занимала весь экран */
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Темное наложение для улучшения читаемости текста */
+  z-index: 1;
+}
+
+
+.hero-content {
+  position: absolute;
+  top: 43%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* Стили для секции особенностей */
+.features-section {
+  background: #fff;
+}
+
+.feature-box {
+  text-align: center;
+  background: #f8f8f8;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  width: 80px; /* Размер иконок в блоках особенностей */
+  height: auto;
+}
+
+/* Стили для секции "О компании" */
+.about-section {
+  background: #f8f8f8; /* Светлый фон для контраста */
+  padding: 4rem 0; /* Паддинг сверху и снизу */
+}
+
+.about-icon {
+  width: 70px; /* Ширина иконки */
+  height: 70px; /* Высота иконки */
+  display: block; /* Для отображения в блоке */
+  margin: 0 auto; /* Центрирование иконки по горизонтали */
+}
+
+/* Стили для текста */
+.about-section h2 {
+  font-size: 1.75rem; /* Увеличенный размер заголовка для читаемости */
+}
+
+.about-section p {
+  font-size: 1rem; /* Размер шрифта для абзаца */
+  margin-bottom: 1.5rem; /* Отступ снизу для абзаца */
+}
+
+
+/* Стили для кнопок */
+.btn {
+  border-radius: 0.5rem;
+}
+
+.btn-outline-primary {
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-outline-primary:hover {
+  background: #007bff;
+  color: #fff;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+  border-color: #004490;
+}
+
+/* Контейнеры и отступы */
+.container {
+  max-width: 1140px;
+  padding: 0 15px;
+  margin: auto;
+}
+
+/* Дополнительные отступы и маргины */
+.my-4 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Дополнительные отступы и маргины */
+.py-4 {
+  padding-top: 1.5rem; /* Уменьшенный отступ сверху */
+  padding-bottom: 1.5rem; /* Уменьшенный отступ снизу */
+}
+
+.mb-4 {
+  margin-bottom: 1.5rem; /* Убедитесь, что margin-bottom не слишком велик */
+}
+
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .hero-content {
+    position: static;
+    transform: none;
+    text-align: center;
+  }
+}

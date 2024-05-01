@@ -1,0 +1,72 @@
+/* Стили для header */
+.navbar {
+  background-color: #000000 !important; /* Черный фон для шапки */
+  align-items: center; /* Выравнивание содержимого шапки по центру по вертикали */
+}
+
+.navbar-brand {
+  margin-left: 2rem; /* Дополнительный отступ слева для логотипа */
+  display: flex;
+  align-items: center;
+}
+
+.navbar-brand img {
+  height: 35px; /* Размер логотипа */
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.search-button {
+  font-size: 1.0rem; /* Размер текста для кнопки поиска, входа и регистрации */
+  padding: 0.5rem 1.6rem; /* Двигаем кнопку поиска вправо от логотипа */
+}
+
+.profile-dropdown {
+  display: flex;
+  align-items: center;
+}
+
+.profile-icon {
+  display: block; /* Убираем стрелочку вниз */
+  margin-right: 3rem; /* Двигаем ближе к центру */
+}
+
+.profile-icon img {
+  height: 40px; /* Размер иконки профиля */
+}
+
+/* Скрытие стрелки выпадающего меню */
+.dropdown-toggle::after {
+  display: none;
+}
+
+/* Выравнивание поиска и профиля */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.nav-item {
+  margin-left: 0.5rem; /* Отступ для элементов навигации */
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+  .navbar-brand {
+    margin-left: 0.5rem; /* Меньший отступ для логотипа на мобильных устройствах */
+  }
+
+  .search-button,
+  .profile-icon {
+    padding: 0.5rem; /* Меньший паддинг для элементов на мобильных устройствах */
+  }
+
+  .nav-item {
+    margin-left: 0; /* Убираем отступы для элементов навигации на мобильных устройствах */
+  }
+}

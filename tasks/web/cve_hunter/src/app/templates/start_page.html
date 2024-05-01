@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}CVE Hunter{% endblock %}
+
+{% block content %}
+<section class="hero-section text-center text-white">
+  <div class="hero-background" style="background-image: url('{{ url_for('static', filename='images/main_background.webp') }}');">
+    <div class="overlay"></div>
+  </div>
+  <div class="container">
+    <div class="hero-content py-5">
+      <h1 class="display-3">CVE Hunter</h1>
+      <p class="lead px-4">Ваш надежный инструмент для поиска и анализа уязвимостей в программном обеспечении.</p>
+      <a class="btn btn-light btn-lg mt-4" href="/search" role="button">Начать поиск</a>
+    </div>
+  </div>
+</section>
+
+<section class="features-section py-3 bg-light">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4">
+        <div class="feature-box p-4">
+          <img src="{{ url_for('static', filename='images/database-icon.svg') }}" alt="Database" class="feature-icon">
+          <h3 class="h4 mt-3">База данных CVE/GHSR</h3>
+          <p>Скоро у нас будет самая обширная база автополняющихся уязвимостей CVE и GHSR, чтобы вы не упускали новые вектора для атак.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="feature-box p-4">
+          <img src="{{ url_for('static', filename='images/exploit-icon.svg') }}" alt="Exploit" class="feature-icon">
+          <h3 class="h4 mt-3">Эксплоиты</h3>
+          <p>Первый в мире сервис использующий AI для автоматической генерации эксплойтов под любые уязвимости. Взломайте любую систему.</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="feature-box p-4">
+          <img src="{{ url_for('static', filename='images/community-icon.svg') }}" alt="Support" class="feature-icon">
+          <h3 class="h4 mt-3">Обсуждение</h3>
+          <p>Обсуждайте захват мира вместе с нашим элитным закрытым сообществом. Присоединение к нам только по личному приглашению.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about-section py-3 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <!-- Иконка над текстом -->
+        <img src="{{ url_for('static', filename='images/about-icon.svg') }}" alt="About CVE Hunter" class="about-icon mb-3">
+        <h2 class="h3 mb-3">О CVE Hunter</h2>
+        <p>Наш сервис находится на этапе разработки, но совсем скоро у нас будут эксплойты под любые уязвимости. Ни одна система не безопасна и не останется в стороне.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}
