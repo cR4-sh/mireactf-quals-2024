@@ -35,7 +35,7 @@
 | [fun-in-the-waste](tasks/osint/fun-in-the-waste) | osint | [@LezhyX](https://t.me/LezhyX) |
 | [stunning-biter](tasks/osint/stunning-biter) | osint | [@LezhyX](https://t.me/LezhyX) |
 | [大阪の魔法少女](tasks/osint/ieroglif) | osint | [@LezhyX](https://t.me/LezhyX) |
-| [cybercalc](tasks/ppc/cybercalc) | ppc | [@papuass](https://t.me/Chillov3k) |
+| [cybercalc](tasks/ppc/cyber-calc) | ppc | [@papuass](https://t.me/Chillov3k) |
 | [slicky-tips](tasks/ppc/slicky-tips) | ppc | [@S4ar](https://t.me/XxX_S4ar_XxX) |
 | [first-title](tasks/steg/first-title) | steg | [@papuass](https://t.me/Chillov3k) |
 | [mrsecret](tasks/steg/mrsecret) | steg | [@ezzh](https://t.me/NikitaBazilews) |
@@ -44,7 +44,7 @@
 | [hello-name](tasks/pwn/hello-name) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [ege](tasks/pwn/ege) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [bingo-1337](tasks/pwn/bingo-1337) | pwn | [@robert_sama](https://t.me/robert_sama) |
-| [nyaaashko](tasks/pwn/nyaaashko) | pwn | [@robert_sama](https://t.me/robert_sama) |
+| [nyaaashko](tasks/pwn/nyashko) | pwn | [@robert_sama](https://t.me/robert_sama) |
 | [minirsa](tasks/crypto/minirsa) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
 | [larger-rsa](tasks/crypto/larger-rsa) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
 | [strongest-xor](tasks/crypto/strongest-xor) | crypto | [@ezzh](https://t.me/NikitaBazilews) |
